@@ -3,9 +3,9 @@
 ###############################################################################
 # iTerm2                                                                      #
 ###############################################################################
-
+echo ${pwd}/bin/ressources/iTerm2/Solarized Dark.itermcolors
 # Install the Solarized Dark theme for iTerm
-open "${CURRENT_PATH}/ressources/iTerm2/Solarized Dark.itermcolors"
+open "${pwd}/bin/ressources/iTerm2/Solarized Dark.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
