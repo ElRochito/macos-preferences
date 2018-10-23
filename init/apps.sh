@@ -18,6 +18,10 @@ if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
     chsh -s /usr/local/bin/bash;
 fi;
 
+
+echo "Oh My ZSH!"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 homebrew_packages=(
     "coreutils"
     "moreutils"
@@ -34,6 +38,7 @@ homebrew_packages=(
     "wget"
     "ctop"
     "htop"
+    "git-flow-avh"
 )
 
 for homebrew_package in "${homebrew_packages[@]}"; do
@@ -49,7 +54,7 @@ echo "Upgrading npm";
 npm install npm@latest -g
 
 echo "Install node packages";
-npm install -g cordova ionic gulp
+#npm install -g cordova ionic gulp
 
 echo "Install Homebrew Cask apps";
 brew tap caskroom/cask
@@ -58,9 +63,11 @@ brew tap buo/cask-upgrade
 # https://caskroom.github.io/search
 homebrew_cask_packages=(
 # Core apps
+    "java"
     "cakebrew"
     "flycut"
-    "openoffice"
+    "libreoffice"
+    "vlc"
     "iterm2"
     "the-unarchiver"
     "dropbox"
@@ -75,8 +82,9 @@ homebrew_cask_packages=(
     "sublime-text"
     "jetbrains-toolbox"
 # Dev apps
-    "android-platform-tools"
-    "android-studio"
+    "alfred"
+    "spectacle"
+    "sublime-text"
     "docker"
     "docker-toolbox"
     "fastlane"
@@ -86,10 +94,13 @@ homebrew_cask_packages=(
     "phpstorm"
     "poedit"
     "postman"
-    "sequel-pro"
+    "dbeaver-community"
     "vagrant"
     "vagrant-manager"
     "virtualbox"
+    "android-file-transfer"
+    #"android-platform-tools"
+    #"android-studio"
 # Nice to have
     "dash"
     "dashlane"
@@ -97,7 +108,6 @@ homebrew_cask_packages=(
     "kap"
     "deezer"
     "transmit"
-    "xscope"
 # Quick Look plugins (see https://github.com/sindresorhus/quick-look-plugins)
     "qlcolorcode"
     "qlstephen"
@@ -133,7 +143,7 @@ if ! [ -a "/Applications/nativefier/DevDocs-darwin-x64/DevDocs.app" ]; then
         npm install -g nativefier
     fi
 	echo "Get https://devdocs.io/ as an app";
-    app_icon=$(pwd)"/ressources/nativefier/app-icon.icns";
+    app_icon=$(pwd)"/init/ressources/nativefier/app-icon.icns";
     mkdir /Applications/nativefier > /dev/null 2>&1;
     cd /Applications/nativefier;
     nativefier --name "DevDocs" --verbose --no-overwrite --counter --icon ${app_icon} --fast-quit "https://devdocs.io/";
@@ -150,7 +160,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     )
 
     for mas_app in "${mas_apps[@]}"; do
-        mas install "$mas_app"
+        #mas install "$mas_app"
     done
 fi;
 
