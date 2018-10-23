@@ -32,6 +32,8 @@ homebrew_packages=(
     "nvm"
     "ssh-copy-id"
     "wget"
+    "ctop"
+    "htop"
 )
 
 for homebrew_package in "${homebrew_packages[@]}"; do
@@ -51,21 +53,30 @@ npm install -g cordova ionic gulp
 
 echo "Install Homebrew Cask apps";
 brew tap caskroom/cask
+brew tap buo/cask-upgrade
+
 # https://caskroom.github.io/search
 homebrew_cask_packages=(
 # Core apps
     "cakebrew"
     "flycut"
     "openoffice"
-    "vlc"
     "iterm2"
     "the-unarchiver"
+    "dropbox"
+    "appcleaner"
+    "airdroid"
+    "font-fira-code"
+    "font-inconsolata"
+    "font-ubuntu"
+    "libreoffice"
+    "rocket-chat"
+    "spectacle"
+    "sublime-text"
+    "jetbrains-toolbox"
 # Dev apps
-    "android-file-transfer"
     "android-platform-tools"
     "android-studio"
-    "bbedit"
-    "charles"
     "docker"
     "docker-toolbox"
     "fastlane"
@@ -76,23 +87,15 @@ homebrew_cask_packages=(
     "poedit"
     "postman"
     "sequel-pro"
-    "sourcetree"
     "vagrant"
     "vagrant-manager"
     "virtualbox"
 # Nice to have
-    "bitbar"
-    #"boom"
-    "daisydisk"
     "dash"
     "dashlane"
-    "divvy"
     "franz"
-    "headset"
     "kap"
-    "opera-neon"
-    "slack"
-    "spotify"
+    "deezer"
     "transmit"
     "xscope"
 # Quick Look plugins (see https://github.com/sindresorhus/quick-look-plugins)
@@ -122,6 +125,7 @@ brew install mcrypt
 brew install composer
 composer global require "squizlabs/php_codesniffer=3.*"
 composer global require "phpmd/phpmd=2.*"
+composer global require "laravel/valet"
 
 if ! [ -a "/Applications/nativefier/DevDocs-darwin-x64/DevDocs.app" ]; then
     if ! [ -x "$(command -v nativefier)" ]; then
