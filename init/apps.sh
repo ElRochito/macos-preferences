@@ -20,7 +20,7 @@ fi;
 
 
 echo "Oh My ZSH!"
-#sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 homebrew_packages=(
     "coreutils"
@@ -70,8 +70,6 @@ homebrew_cask_packages=(
     "alfred"
     "spectacle"
     "sublime-text"
-    "docker"
-    "docker-toolbox"
     "fastlane"
     "firefox"
     "google-chrome"
@@ -88,14 +86,11 @@ homebrew_cask_packages=(
     #"android-studio"
 # Nice to have
     "bitbar"
-    "daisydisk"
     "dash"
     "dashlane"
-    "divvy"
     "franz"
     "kap"
-    "slack"
-    "spotify"
+    "deezer"
     "transmit"
 # Quick Look plugins (see https://github.com/sindresorhus/quick-look-plugins)
     "qlcolorcode"
@@ -117,11 +112,18 @@ done;
 qlmanage -r
 
 echo "PHP Tools";
-brew tap homebrew/dupes
-brew tap homebrew/php
-brew install php@7.1
+
+cp $(pwd)/bin/sphp /usr/local/bin/sphp
+cp $(pwd)/bin/xdebug /usr/local/bin/xdebug
+
+brew install vault
+brew install php@7.3
+pecl install redis
+pecl install xdebug
 brew install mcrypt
 brew install composer
+
+composer global require "laravel/valet"
 composer global require "squizlabs/php_codesniffer=3.*"
 composer global require "phpmd/phpmd=2.*"
 
