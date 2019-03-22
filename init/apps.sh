@@ -36,6 +36,8 @@ homebrew_packages=(
     "nvm"
     "ssh-copy-id"
     "wget"
+    "ctop"
+    "htop"
     "git-flow-avh"
 )
 
@@ -56,6 +58,8 @@ echo "Install node packages";
 
 echo "Install Homebrew Cask apps";
 brew tap caskroom/cask
+brew tap buo/cask-upgrade
+
 # https://caskroom.github.io/search
 homebrew_cask_packages=(
 # Core apps
@@ -66,6 +70,17 @@ homebrew_cask_packages=(
     "vlc"
     "iterm2"
     "the-unarchiver"
+    "dropbox"
+    "appcleaner"
+    "airdroid"
+    "font-fira-code"
+    "font-inconsolata"
+    "font-ubuntu"
+    "libreoffice"
+    "rocket-chat"
+    "spectacle"
+    "sublime-text"
+    "jetbrains-toolbox"
 # Dev apps
     "alfred"
     "spectacle"
@@ -85,7 +100,6 @@ homebrew_cask_packages=(
     #"android-platform-tools"
     #"android-studio"
 # Nice to have
-    "bitbar"
     "dash"
     "dashlane"
     "franz"
@@ -126,6 +140,7 @@ brew install composer
 composer global require "laravel/valet"
 composer global require "squizlabs/php_codesniffer=3.*"
 composer global require "phpmd/phpmd=2.*"
+composer global require "laravel/valet"
 
 if ! [ -a "/Applications/nativefier/DevDocs-darwin-x64/DevDocs.app" ]; then
     if ! [ -x "$(command -v nativefier)" ]; then
