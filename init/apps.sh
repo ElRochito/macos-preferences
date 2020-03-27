@@ -19,8 +19,8 @@ if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
 fi;
 
 
-echo "Oh My ZSH!"
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# echo "Oh My ZSH!"
+# sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 homebrew_packages=(
     "coreutils"
