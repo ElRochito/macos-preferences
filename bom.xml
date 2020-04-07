@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<bom xmlns="http://cyclonedx.org/schema/bom/1.0" version="1"><components><component type="library"><name>macos-preferences</name><version>1.0.0</version><hashes></hashes><licenses><license><name>ISC</name></license></licenses><purl>pkg:npm/macos-preferences@1.0.0</purl><modified>false</modified></component></components></bom>

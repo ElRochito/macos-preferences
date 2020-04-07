@@ -1,0 +1,19 @@
+{
+  "name": "macos-preferences",
+  "version": "1.0.0",
+  "description": "My own (.)files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElRochito/macos-preferences.git"
+  },
+  "author": "ROCHE Julien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElRochito/macos-preferences/issues"
+  },
+  "homepage": "https://github.com/ElRochito/macos-preferences#readme"
+}
